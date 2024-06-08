@@ -25,4 +25,8 @@ export const GlobalStyle = createGlobalStyle`
     button{
         font: 400 1rem Roboto, sons-serif;
     }
+
+    button, a{
+        cursor: pointer;
+    }
 `
