@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const TransactionsContainer = styled.main`
 width: 100%;
@@ -31,5 +31,11 @@ interface PriceHighLightProps{
     variant: "income" | "outcome"
 }
 export const PriceHighLight = styled.span<PriceHighLightProps>`
-color: ${props => props.variant === 'income' ? props.theme["green-300"] : props.theme["red-300"]};
+
+${({variant, theme})=>variant === 'income' && css`
+color: ${theme.colors["green-300"]};
+`}
+${({variant, theme})=> variant === 'outcome' && css`
+color: ${theme.colors["red-300"]}
+`}
 `
