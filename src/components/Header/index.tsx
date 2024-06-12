@@ -8,13 +8,20 @@ export function Header() {
             <HeaderContent>
                 <img src={Logo} alt="logo" />
                 <Dialog.Root>
-                    <Dialog.Trigger>
-                        <Dialog.Portal>
-                            <NewTransactionButton>
-                                Nova transação
-                            </NewTransactionButton>
-                        </Dialog.Portal>
+                    <Dialog.Trigger asChild>
+                        <NewTransactionButton>
+                            Nova transação
+                        </NewTransactionButton>
                     </Dialog.Trigger>
+                    <Dialog.Portal>
+                        <Dialog.Overlay />
+                        <Dialog.Content>
+                            <Dialog.Title>
+                                Nova transação
+                            </Dialog.Title>
+                            <Dialog.Close/>
+                        </Dialog.Content>
+                    </Dialog.Portal>
                 </Dialog.Root>
             </HeaderContent>
         </HeaderContainer>
