@@ -91,6 +91,9 @@ transition: 0.4s;
 svg{
 color: ${props => props.variant === "income" ? props.theme.colors["green-300"] : props.theme.colors["red-300"]};
 }
+&[data-state='unchecked']:hover {
+    background: ${({theme})=>theme.colors["gray-600"]};
+}
 &[data-state='checked']{
     color: ${({theme}) => theme.colors['white']};
     background: ${({theme, variant})=> variant === 'income' ? theme.colors["green-500"] : theme.colors["red-500"]};
