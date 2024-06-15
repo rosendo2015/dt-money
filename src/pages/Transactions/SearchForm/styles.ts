@@ -29,8 +29,14 @@ button{
     font-weight: bold;
     border-radius: 6px;
     transition: 0.4s;
+    cursor: pointer;
 
-    &:hover{
+    &:disabled{
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    &:not(:disabled):hover{
         border: 1px solid ${({theme})=>theme.colors["green-300"]};
         background: ${({theme})=>theme.colors["green-300"]};
         color: ${({theme})=>theme.colors["white"]};

@@ -24,18 +24,15 @@ td{
         border-bottom-right-radius: 6px;
 
     }
+    
 
 }
 `
 interface PriceHighLightProps{
-    variant: "income" | "outcome"
+    variant: 'income' | 'outcome'
 }
 export const PriceHighLight = styled.span<PriceHighLightProps>`
 
-${({variant, theme})=>variant === 'income' && css`
-color: ${theme.colors["green-300"]};
-`}
-${({variant, theme})=> variant === 'outcome' && css`
-color: ${theme.colors["red-300"]}
-`}
+${({variant, theme})=> variant === 'income' && css`color: ${theme.colors["green-300"]};`}
+${({variant, theme})=> variant === 'outcome' && css`color: ${theme.colors["red-300"]};`}
 `

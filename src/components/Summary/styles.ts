@@ -14,7 +14,7 @@ gap: 2rem;
 border-radius: 6px;
 `
 interface SummaryCardProps{
-    variant?: "green";  
+    variant?: 'income'|'outcome';  
 }
 export const SummaryCard = styled.div<SummaryCardProps>`
 background: ${({theme})=>theme.colors["gray-600"]};
@@ -44,7 +44,6 @@ gap: 0.75rem;
     font-weight: 700;
     line-height: 140%;
 }
-${props => props.variant === 'green' && css`
-background: ${({theme})=>theme.colors["green-500"]};
-`}
+${props => props.variant === 'income' && css`background: ${({theme})=>theme.colors["green-500"]};`}
+${props => props.variant === 'outcome' && css`background: ${({theme})=>theme.colors["red-500"]};`}
 `
