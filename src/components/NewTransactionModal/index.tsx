@@ -17,54 +17,61 @@ export function NewTransactionsModal() {
 
     type NewTransactionFormInputs = z.infer<typeof NewTransactionFormSchema>
 
-    function handleCreateNewTransaction(data:NewTransactionFormInputs){
+    async function handleCreateNewTransaction(data: NewTransactionFormInputs) {
+        await new Promise(resolve => setTimeout(resolve, 3000))
         console.log(data)
     }
 
-    const { register, handleSubmit } = useForm<NewTransactionFormInputs>({
-            resolver: zodResolver(NewTransactionFormSchema)
-        })
+    const {
+        register,
+        handleSubmit,
+        formState: {
+            isSubmitting
+        }
+    } = useForm<NewTransactionFormInputs>({
+        resolver: zodResolver(NewTransactionFormSchema)
+    })
     return (
 
         <>
-        <Dialog.Portal>
-            <Overlay />
-            <Content>
-                <Dialog.Title>
-                    Nova transação
-                </Dialog.Title>
-                <Close>
-                    <X size={24} />
-                </Close>
-                <form onSubmit={handleSubmit(handleCreateNewTransaction)}>
-                    <input type="text" placeholder="Descrição" required
-                        {...register('description')}
-                    />
-                    <input type="number" placeholder="Preço" required
-                        {...register('price', { valueAsNumber: true })}
-                    />
-                    <input type="text" placeholder="Categoria" required
-                        {...register('category')}
-                    />
+            <Dialog.Portal>
+                <Overlay />
+                <Content>
+                    <Dialog.Title>
+                        Nova transação
+                    </Dialog.Title>
+                    <Close>
+                        <X size={24} />
+                    </Close>
+                    <form onSubmit={handleSubmit(handleCreateNewTransaction)}>
+                        <input type="text" placeholder="Descrição" required
+                            {...register('description')}
+                        />
+                        <input type="number" placeholder="Preço" required
+                            {...register('price', { valueAsNumber: true })}
+                        />
+                        <input type="text" placeholder="Categoria" required
+                            {...register('category')}
+                        />
 
-                    <TransactionType>
+                        <TransactionType>
 
-                        <TransactionTypeButton variant="income" value="income">
-                            <ArrowCircleUp size={24} />
-                            Entrada
-                        </TransactionTypeButton>
+                            <TransactionTypeButton variant="income" value="income">
+                                <ArrowCircleUp size={24} />
+                                Entrada
+                            </TransactionTypeButton>
 
-                        <TransactionTypeButton variant="outcome" value="outcome">
-                            <ArrowCircleDown size={24} />
-                            Saída
-                        </TransactionTypeButton>
-                    </TransactionType>
+                            <TransactionTypeButton variant="outcome" value="outcome">
+                                <ArrowCircleDown size={24} />
+                                Saída
+                            </TransactionTypeButton>
+                        </TransactionType>
 
-                    <button type="submit">Cadastrar</button>
-                </form>
+                        <button type="submit" disabled={isSubmitting}>Cadastrar</button>
+                    </form>
 
-            </Content>
-        </Dialog.Portal>
+                </Content>
+            </Dialog.Portal>
         </>
     )
 }

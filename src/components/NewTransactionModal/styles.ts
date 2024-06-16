@@ -50,9 +50,13 @@ form{
             margin-top: 1.5rem;
             transition: 0.4s;
             
+            &:disabled{
+                opacity: 0.6;
+                cursor: not-allowed;
+            }
 
-            &:hover{
-                background: ${({theme})=>theme.colors["green-700"]};
+            &:not(:disabled):hover{
+                background: ${({ theme }) => theme.colors["green-700"]};
             }
     }
 }
@@ -64,7 +68,7 @@ right: 1.5rem;
 background: transparent;
 border: 0;
 line-height: 0;
-color: ${({theme})=>theme.colors["gray-500"]};
+color: ${({ theme }) => theme.colors["gray-500"]};
 
 `
 export const TransactionType = styled(RadioGroup.Root)`
@@ -73,11 +77,11 @@ grid-template-columns: repeat(2, 1fr);
 gap: 1rem;
 margin-top: 0.5rem;
 `
-interface TransactionTypeButtonProps{
+interface TransactionTypeButtonProps {
     variant: "income" | "outcome"
 }
-export const TransactionTypeButton = styled(RadioGroup.Item)<TransactionTypeButtonProps>`
-background: ${({theme})=>theme.colors["gray-700"]};
+export const TransactionTypeButton = styled(RadioGroup.Item) <TransactionTypeButtonProps>`
+background: ${({ theme }) => theme.colors["gray-700"]};
 padding: 1rem;
 display: flex;
 align-items: center;
@@ -86,20 +90,20 @@ gap: 0.5rem;
 border-radius: 6px;
 cursor: pointer;
 border: 0;
-color: ${({theme})=>theme.colors["gray-300"]};
+color: ${({ theme }) => theme.colors["gray-300"]};
 transition: 0.4s;
 svg{
 color: ${props => props.variant === "income" ? props.theme.colors["green-300"] : props.theme.colors["red-300"]};
 }
 &[data-state='unchecked']:hover {
-    background: ${({theme})=>theme.colors["gray-600"]};
+    background: ${({ theme }) => theme.colors["gray-600"]};
 }
 &[data-state='checked']{
-    color: ${({theme}) => theme.colors['white']};
-    background: ${({theme, variant})=> variant === 'income' ? theme.colors["green-500"] : theme.colors["red-500"]};
+    color: ${({ theme }) => theme.colors['white']};
+    background: ${({ theme, variant }) => variant === 'income' ? theme.colors["green-500"] : theme.colors["red-500"]};
 
     svg{
-        color: ${({theme})=>theme.colors['white']};
+        color: ${({ theme }) => theme.colors['white']};
     }
 }
 `
