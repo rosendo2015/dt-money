@@ -58,9 +58,12 @@ export function NewTransactionsModal() {
                         <Controller
                             control={control}
                             name="type"
-                            render={({ field }) => {
+                            render={({field}) => {
                                 return (
-                                    <TransactionType onValueChange={field.onChange} value={field.value}>
+                                    <TransactionType
+                                        onValueChange={field.onChange}
+                                        value={field.value}
+                                    >
                                         <TransactionTypeButton variant="income" value="income">
                                             <ArrowCircleUp size={24} />
                                             Entrada
