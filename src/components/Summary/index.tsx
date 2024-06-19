@@ -24,7 +24,7 @@ export function Summary({ variant }: SummaryCardProps) {
         <strong>{priceFormatter.format(summary.outcome)}</strong>
       </SummaryCard>
       <SummaryCard
-        variant={summary.total < 0 ? (variant = 'income') : 'outcome'}
+        variant={summary.total > 0 ? (variant = 'income') : 'outcome'}
       >
         <header>
           <span>Total</span>
