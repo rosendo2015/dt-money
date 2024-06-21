@@ -13,48 +13,9 @@
       "description": "Hamburger",
       "type": "outcome",
       "category": "Alimentação",
-      "price": 50,
+      "price": 1400,
       "createdAt": "2024-06-14T22:18:57.527Z"
-    },
-    {
-      "id": "3",
-      "description": "Ignite Rocketseat",
-      "type": "outcome",
-      "category": "Educação",
-      "price": 1980,
-      "createdAt": "2022-09-22T22:18:57.527Z"
-    },
-    {
-      "id": "4",
-      "description": "CoffeDelivery",
-      "type": "income",
-      "category": "Vendas",
-      "price": 3000,
-      "createdAt": "2024-05-09T08:18:57.527Z"
-    },
-    {
-      "id": "1bbb",
-      "description": "Manutenção de site",
-      "price": 1500,
-      "type": "income",
-      "category": "Serviços",
-      "createdAt": "2024-06-17T22:55:26.505Z"
-    },
-    {
-      "id": "6daa",
-      "description": "Pegar requisitos para site",
-      "price": 250,
-      "type": "income",
-      "category": "Serviços",
-      "createdAt": "2024-06-18T22:30:26.595Z"
-    },
-    {
-      "id": "7d02",
-      "description": "Vitamina de abacate",
-      "price": 5,
-      "type": "outcome",
-      "category": "Alimentação",
-      "createdAt": "2024-06-18T22:55:13.841Z"
     }
+   
   ]
 }
