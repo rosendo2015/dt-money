@@ -13,7 +13,7 @@ export const SummaryContainer = styled.section`
   border-radius: 6px;
 `
 interface SummaryCardProps {
-  variant?: 'income' | 'outcome' | 'common'
+  variant?: 'green' | 'red'
 }
 export const SummaryCard = styled.div<SummaryCardProps>`
   background: ${({ theme }) => theme.colors['gray-600']};
@@ -41,18 +41,15 @@ export const SummaryCard = styled.div<SummaryCardProps>`
     font-weight: 700;
     line-height: 140%;
   }
+
   ${(props) =>
-    props.variant === 'income' &&
+    props.variant === 'green' &&
     css`
       background: ${({ theme }) => theme.colors['green-500']};
     `}
+
   ${(props) =>
-    props.variant === 'common' &&
-    css`
-      background: ${({ theme }) => theme.colors['gray-600']};
-    `}
-  ${(props) =>
-    props.variant === 'outcome' &&
+    props.variant === 'red' &&
     css`
       background: ${({ theme }) => theme.colors['red-500']};
     `}

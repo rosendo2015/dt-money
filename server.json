@@ -15,7 +15,14 @@
       "category": "Alimentação",
       "price": 1400,
       "createdAt": "2024-06-14T22:18:57.527Z"
+    },
+    {
+      "id": "4dc5",
+      "description": "Manutenção de site",
+      "price": 1500,
+      "type": "income",
+      "category": "Manutenção",
+      "createdAt": "2024-06-21T23:10:09.567Z"
     }
-   
   ]
 }

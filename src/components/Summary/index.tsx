@@ -23,9 +23,7 @@ export function Summary({ variant }: SummaryCardProps) {
         </header>
         <strong>{priceFormatter.format(summary.outcome)}</strong>
       </SummaryCard>
-      <SummaryCard
-        variant={summary.total > 0 ? (variant = 'income') : 'outcome'}
-      >
+      <SummaryCard variant={summary.total > 0 ? 'green' : 'red'}>
         <header>
           <span>Total</span>
           <CurrencyDollar size={32} color="#fff" />
