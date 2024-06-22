@@ -7,7 +7,38 @@
       "category": "Manutenção",
       "price": 1400,
       "createdAt": "2024-06-14T22:28:57.527Z"
+    },
+    {
+      "id": "5dd3",
+      "description": "Pegar requisitos para site",
+      "price": 500,
+      "type": "income",
+      "category": "Serviços",
+      "createdAt": "2024-06-22T12:19:42.802Z"
+    },
+    {
+      "id": "0d55",
+      "description": "Hamburguer",
+      "price": 45,
+      "type": "outcome",
+      "category": "Alimentação",
+      "createdAt": "2024-06-22T12:20:19.155Z"
+    },
+    {
+      "id": "5b25",
+      "description": "Aluguel",
+      "price": 3200,
+      "type": "outcome",
+      "category": "Despesas",
+      "createdAt": "2024-06-22T12:21:27.979Z"
+    },
+    {
+      "id": "e5b9",
+      "description": "Manutenção de site",
+      "price": 1500,
+      "type": "income",
+      "category": "Serviços",
+      "createdAt": "2024-06-22T12:26:12.143Z"
     }
-    
   ]
 }
